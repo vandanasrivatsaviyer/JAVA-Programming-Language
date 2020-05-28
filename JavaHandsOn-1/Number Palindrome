@@ -1,0 +1,38 @@
+George and  Tintin plays  by  telling numbers.  George says a number to Tintin.  Tintin should first reverse the number and check if it is same as the original.  If yes,  Tintin should say “Palindrome”.  If not, he should say “Not a Palindrome”.  If the number is negative, print “Invalid Input”.  Help Tintin by writing a program.
+Sample Input 1 :
+21212
+Sample Output 1 :
+Palindrome
+
+###############..............CODE...................###########################
+
+import java.io.*;
+    public class Palindrome
+     {
+         public static void main(String args[])throws IOException
+         {
+            BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+            //System.out.println("To check whether the number is a palindrome or not");
+            //System.out.println("Input a number");
+            int n=Integer.parseInt(br.readLine());
+            int a=n,rev=0,ld;
+            if (n<0)
+            {
+               System.out.println("Invalid Input");
+           }
+            else
+            {
+                while (a>0)
+                {
+                    ld=a%10;
+                  a/=10;
+                   rev=rev*10+ld;
+                }
+                if (rev==n)
+                    System.out.println("Palindrome");
+              else 
+                    System.out.println("Not a Palindrome");
+            }
+           
+        }
+    }
