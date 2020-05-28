@@ -1,0 +1,37 @@
+William planned to choose a four digit lucky number for his car. His lucky numbers are 3,5 and 7. Help him find the number, whose sum is divisible by  3 or 5 or 7.
+Provide a valid car number, Fails to provide a valid input then display that number is not a valid car number. 
+Note : The input other than 4 digit positive number[includes negative and 0] is considered as invalid.
+Refer the samples, to read and display the data.
+Sample Input 1:
+Enter the car no:1234
+Sample Output 1:
+Lucky Number
+
+#####################.....................CODE.................#################################3
+
+mport java.util.*;
+class LuckyNum {
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the car no:");
+        int n=sc.nextInt();
+        String s=Integer.toString(n);
+        if(s.length()!=4 || n<0){
+            System.out.printf("%d is not a valid car number\n",n);
+        } 
+        else{
+            int su=0;
+            for (int i=0;i<s.length();i++){
+                int x=n%10;
+                n=n/10;
+                su=su+x;
+            }
+            if((su%3==0) || (su%5==0) || (su%7==0)){
+                System.out.println("Lucky Number");
+            }
+            else{
+                System.out.println("Sorry its not my lucky number");
+            }
+        }
+    }
+}
